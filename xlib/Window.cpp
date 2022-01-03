@@ -720,12 +720,12 @@ XSetNormalHints(Display* display, Window w, XSizeHints* hints)
 	if (hints->flags & PMinSize) {
 		float maxWidth, maxHeight;
 		window->bwindow->GetSizeLimits(NULL, &maxWidth, NULL, &maxHeight);
-		window->bwindow->SetSizeLimits(hints->min_width, maxWidth, hints->min_height, maxHeight);
+		//window->bwindow->SetSizeLimits(hints->min_width, maxWidth, hints->min_height, maxHeight);
 	}
 	if (hints->flags & PMaxSize) {
 		float minWidth, minHeight;
 		window->bwindow->GetSizeLimits(&minWidth, NULL, &minHeight, NULL);
-		window->bwindow->SetSizeLimits(minWidth, hints->max_width, minHeight, hints->max_height);
+		//window->bwindow->SetSizeLimits(minWidth, hints->max_width, minHeight, hints->max_height);
 	}
 	if (hints->flags & PResizeInc) {
 		// Not supported.

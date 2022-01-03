@@ -112,6 +112,7 @@ XChangeProperty(Display* dpy, Window w, Atom property, Atom type,
 	}
 
 	case Atoms::_MOTIF_WM_HINTS: {
+		return Success;
 		/* The _MOTIF_WM_HINTS property is widely used but not very well documented.
 		 * Most producers and consumers of this API seem to copy and paste the definitions
 		 * from Motif's headers, but the precise semantics are not very well defined. */
@@ -211,6 +212,7 @@ XChangeProperty(Display* dpy, Window w, Atom property, Atom type,
 		return Success;
 	}
 	case Atoms::_NET_WM_WINDOW_TYPE: {
+		return Success;
 		if (type != XA_ATOM || nelements != 1)
 			return BadValue;
 		XWindow* window = Drawables::get_window(w);
